@@ -1,22 +1,22 @@
 [Imagem do leandro]  
 # Leandro Teixeira   
-Engenhiro de Devops
+Engenheiro de Devops
 
 
 ## CONTATO  
-[imagem telefone] +55 11 983776007  
-[imagem de envelope] leandro.tex@outlook.com  
-[pin de mapa] Cep 08526-000, 1599 - Bl 06 Ap 22  
-[github] www.github.com/latex  
-[BLOG] www.fundacaohs.com.br/latex
+![Telefone](http://icon-icons.com/icons2/644/PNG/512/grey_phone_icon-icons.com_59471.png  =100x20) +55 11 983776007  
+![Email](http://download.seaicons.com/icons/uiconstock/socialmedia/512/Email-icon.png=50) leandro.tex@outlook.com  
+![](https://cdn4.iconfinder.com/data/icons/map/500/map-2-512.png) Cep 08526-000, 1599 - Bl 06 Ap 22  
+![](http://www.iconsdb.com/icons/preview/gray/github-10-xxl.png) www.github.com/latex  
+![](https://elisahays.com/wp-content/uploads/2016/02/blog-icon-300x300.png) www.fundacaohs.com.br/latex
 
 ## SOBRE   
 
 ## IDIOMAS    
-Português [5 star]  
-Ingles[4 star]  
-Espanhol[3 star]  
-Frances[1 star]  
+Português ![](https://i.stack.imgur.com/sGnY4.jpg)  
+Ingles![](https://i.stack.imgur.com/sGnY4.jpg)
+Espanhol![](https://i.stack.imgur.com/sGnY4.jpg)
+Frances![](https://i.stack.imgur.com/sGnY4.jpg)
 
 ## COMPETNCIAS PROFICIONAIS  
 Engenharia de Software  
@@ -26,11 +26,11 @@ Analise de Sistemas
 Infra Estrutura  
 
 ## HABILIDADES TÉCNICAS 
-Infra estrutura[98%]
-Desenvolvimento de Software/Scripts[95%]
-Devops [89%]
-Mobile [98%]
-Adiministração Rede [85%]
+Infra estrutura![](https://i.stack.imgur.com/sGnY4.jpg)
+Desenvolvimento de Software/Scripts![](https://i.stack.imgur.com/sGnY4.jpg)
+Devops ![](https://i.stack.imgur.com/sGnY4.jpg)
+Mobile ![](https://i.stack.imgur.com/sGnY4.jpg)
+Adiministração Rede ![](https://i.stack.imgur.com/sGnY4.jpg)
 
 
 ## FORMAÇÃO ACADEMICA  
