@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Currículo - Leandro de Araújo Teixeira | Red Team & Offensive Security</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --color-primary: #0f172a;       /* Slate 900 */
+      --color-primary-light: #1e293b; /* Slate 800 */
+      --color-secondary: #991b1b;     /* Red 800 (Red Team theme) */
+      --color-accent: #dc2626;        /* Red 600 */
+      --color-accent-dark: #b91c1c;   /* Red 700 */
+      --color-accent-bg: #fef2f2;     /* Red 50 */
+      --color-accent-border: #fecaca; /* Red 200 */
+      --color-text: #1e293b;          /* Slate 800 */
+      --color-text-muted: #475569;    /* Slate 600 */
+      --color-text-light: #64748b;    /* Slate 500 */
+      --color-border: #e2e8f0;        /* Slate 200 */
+      --color-border-dark: #cbd5e1;   /* Slate 300 */
+      --color-bg-subtle: #f8fafc;     /* Slate 50 */
+      --color-badge-bg: #f1f5f9;      /* Slate 100 */
+      
+      --color-tag-ai: #4338ca;        /* Indigo 700 */
+      --color-tag-ai-bg: #eef2ff;     /* Indigo 50 */
+      --color-tag-ai-border: #c7d2fe; /* Indigo 200 */
+
+      --color-tag-sec: #991b1b;       /* Red 800 */
+      --color-tag-sec-bg: #fef2f2;    /* Red 50 */
+      --color-tag-sec-border: #fecaca;/* Red 200 */
+
+      --color-tag-hw: #0f766e;        /* Teal 700 */
+      --color-tag-hw-bg: #f0fdf4;     /* Teal 50 */
+      --color-tag-hw-border: #99f6e4; /* Teal 200 */
+
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    html, body {
+      width: 100%;
+      background-color: #f1f5f9;
+      color: var(--color-text);
+      font-family: var(--font-sans);
+      font-size: 8.5pt;
+      line-height: 1.36;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .resume-wrapper {
+      max-width: 210mm;
+      margin: 20px auto;
+      background: #ffffff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      border-radius: 4px;
+      padding: 10mm 12mm;
+    }
+
+    @page {
+      size: A4;
+      margin: 8mm 10mm 8mm 10mm;
+    }
+
+    @media print {
+      html, body {
+        background: #ffffff;
+        font-size: 8.2pt;
+        line-height: 1.34;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      .resume-wrapper {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+        border-radius: 0;
+      }
+
+      .no-print {
+        display: none !important;
+      }
+
+      .page-break {
+        break-before: page !important;
+        page-break-before: always !important;
+        padding-top: 2mm;
+      }
+
+      .avoid-break {
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+      }
+    }
+
+    /* Action bar */
+    .action-bar {
+      max-width: 210mm;
+      margin: 15px auto 0 auto;
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    .btn-print {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background-color: var(--color-primary);
+      color: #ffffff;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 9pt;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: background-color 0.15s ease;
+    }
+    .btn-print:hover {
+      background-color: var(--color-accent-dark);
+    }
+
+    /* Header */
+    header.executive-header {
+      border-bottom: 2px solid var(--color-secondary);
+      padding-bottom: 7px;
+      margin-bottom: 10px;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+    }
+
+    .candidate-name {
+      font-size: 20pt;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--color-primary);
+      line-height: 1.05;
+    }
+
+    .location-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 7.8pt;
+      font-weight: 600;
+      color: var(--color-text-muted);
+      background: var(--color-bg-subtle);
+      border: 1px solid var(--color-border);
+      padding: 3px 8px;
+      border-radius: 9999px;
+      white-space: nowrap;
+    }
+
+    .candidate-headline {
+      margin-top: 4px;
+      font-size: 10.2pt;
+      font-weight: 700;
+      color: var(--color-secondary);
+      letter-spacing: -0.01em;
+    }
+
+    .candidate-subheadline {
+      font-size: 8.4pt;
+      font-weight: 600;
+      color: var(--color-text-muted);
+      margin-top: 1px;
+    }
+
+    .contact-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 7px;
+      padding-top: 6px;
+      border-top: 1px dashed var(--color-border);
+      font-size: 7.9pt;
+      color: var(--color-text-muted);
+    }
+
+    .contact-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .contact-item a {
+      color: var(--color-primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-item a:hover {
+      color: var(--color-accent);
+      text-decoration: underline;
+    }
+
+    /* Section Styles */
+    section.resume-section {
+      margin-bottom: 9px;
+    }
+
+    .section-title {
+      font-size: 9.8pt;
+      font-weight: 700;
+      color: var(--color-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1.5px solid var(--color-border-dark);
+      padding-bottom: 2px;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .summary-text {
+      font-size: 8.35pt;
+      color: var(--color-text);
+      text-align: justify;
+      margin-bottom: 4px;
+    }
+
+    /* Competencies Grid */
+    .competencies-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 5px 12px;
+      margin-bottom: 6px;
+    }
+
+    .comp-item {
+      display: flex;
+      flex-direction: column;
+      background: var(--color-bg-subtle);
+      border: 1px solid var(--color-border);
+      border-left: 3px solid var(--color-secondary);
+      padding: 4px 7px;
+      border-radius: 3px;
+    }
+
+    .comp-label {
+      font-weight: 700;
+      font-size: 7.8pt;
+      color: var(--color-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-bottom: 1px;
+    }
+
+    .comp-content {
+      font-size: 7.8pt;
+      color: var(--color-text-muted);
+      line-height: 1.28;
+    }
+
+    /* Experience Card */
+    .experience-card {
+      margin-bottom: 8px;
+      page-break-inside: avoid;
+    }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2px;
+    }
+
+    .exp-title-group {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .exp-company {
+      font-size: 9.2pt;
+      font-weight: 700;
+      color: var(--color-primary);
+    }
+
+    .exp-role {
+      font-size: 8.6pt;
+      font-weight: 600;
+      color: var(--color-secondary);
+    }
+
+    .exp-period {
+      font-family: var(--font-mono);
+      font-size: 7.5pt;
+      font-weight: 600;
+      color: var(--color-text-light);
+      white-space: nowrap;
+    }
+
+    .exp-bullets {
+      list-style-type: disc;
+      padding-left: 15px;
+      margin-top: 2px;
+    }
+
+    .exp-bullets li {
+      font-size: 8.1pt;
+      line-height: 1.34;
+      margin-bottom: 2.5px;
+      color: var(--color-text);
+      text-align: justify;
+    }
+
+    .exp-bullets li strong {
+      color: var(--color-primary);
+      font-weight: 600;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-top: 3px;
+    }
+
+    .tag {
+      font-size: 7pt;
+      font-family: var(--font-mono);
+      padding: 1px 5px;
+      border-radius: 3px;
+      background: var(--color-badge-bg);
+      border: 1px solid var(--color-border);
+      color: var(--color-text-muted);
+      font-weight: 500;
+    }
+
+    .tag-red {
+      background: var(--color-tag-sec-bg);
+      border-color: var(--color-tag-sec-border);
+      color: var(--color-tag-sec);
+      font-weight: 600;
+    }
+
+    .tag-hw {
+      background: var(--color-tag-hw-bg);
+      border-color: var(--color-tag-hw-border);
+      color: var(--color-tag-hw);
+      font-weight: 600;
+    }
+
+    /* Highlights Box */
+    .highlights-box {
+      background: var(--color-bg-subtle);
+      border: 1px solid var(--color-border-dark);
+      border-left: 4px solid var(--color-primary);
+      padding: 6px 9px;
+      border-radius: 4px;
+      margin-bottom: 8px;
+    }
+
+    .highlights-box h4 {
+      font-size: 8.4pt;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 3px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .highlights-box ul {
+      list-style: square;
+      padding-left: 14px;
+      font-size: 8pt;
+      color: var(--color-text);
+      line-height: 1.32;
+    }
+
+    .highlights-box li {
+      margin-bottom: 2px;
+    }
+
+    /* Multi Column Layout */
+    .two-col-section {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .simple-list {
+      list-style-type: disc;
+      padding-left: 14px;
+      font-size: 8pt;
+    }
+
+    .simple-list li {
+      margin-bottom: 2.5px;
+      line-height: 1.3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="action-bar no-print">
+    <button class="btn-print" onclick="window.print()">
+      🖨️ Imprimir / Salvar como PDF
+    </button>
+  </div>
+
+  <div class="resume-wrapper">
+    <!-- HEADER -->
+    <header class="executive-header">
+      <div class="header-top">
+        <h1 class="candidate-name">Leandro de Araújo Teixeira</h1>
+        <div class="location-badge">📍 São Paulo, SP – Brasil</div>
+      </div>
+      <div class="candidate-headline">Staff / Senior Red Team Operator & Adversary Emulation Specialist</div>
+      <div class="candidate-subheadline">Offensive Security, Exploit Development, Firmware & Linux Kernel Driver Reverse Engineering</div>
+      <div class="contact-bar">
+        <div class="contact-item">📞 +55 (11) 93001-8609</div>
+        <div class="contact-item">✉️ <a href="mailto:leandro.tex@outlook.com">leandro.tex@outlook.com</a></div>
+        <div class="contact-item">🔗 <a href="https://www.linkedin.com/in/leandrotex/" target="_blank">linkedin.com/in/leandrotex</a></div>
+        <div class="contact-item">💻 <a href="https://github.com/latex" target="_blank">github.com/latex</a></div>
+      </div>
+    </header>
+
+    <!-- RESUMO PROFISSIONAL -->
+    <section class="resume-section">
+      <h2 class="section-title">🎯 Resumo Profissional</h2>
+      <p class="summary-text">
+        Especialista em Segurança Ofensiva (Red Team), Emulação de Adversários (Adversary Emulation) e Engenharia Reversa com mais de três décadas de sólida trajetória em tecnologia. Vivência profunda tanto em ataques de alta complexidade contra infraestruturas corporativas modernas (GCP, Azure, Kubernetes, Microsserviços e Inteligência Artificial) quanto em camadas de baixo nível: <strong>engenharia reversa de firmware embarcado/IoT</strong>, desmontagem de binários (ELF/PE) e <strong>desenvolvimento/engenharia reversa de drivers de dispositivo no Kernel Linux</strong>.
+      </p>
+      <p class="summary-text">
+        Ampla experiência na liderança e execução de campanhas de invasão ponta a ponta (MITRE ATT&CK), desenvolvimento de tooling ofensivo customizado (Python, Go, C, Rust e Bash), evasão de EDR/WAF/SIEM, pós-exploração, escalonamento de privilégios e movimentação lateral. Pioneiro em <strong>AI Red Teaming</strong>, testando proativamente vetores de ataque contra LLMs corporativos (Vertex AI / Gemini), incluindo Prompt Injection, Jailbreaking, quebra de guardrails e exfiltração de RAG.
+      </p>
+    </section>
+
+    <!-- COMPETÊNCIAS / ARSENAL TÉCNICO -->
+    <section class="resume-section">
+      <h2 class="section-title">🛠️ Arsenal Técnico & Competências Principais</h2>
+      <div class="competencies-grid">
+        <div class="comp-item">
+          <span class="comp-label">Adversary Emulation & C2</span>
+          <span class="comp-content">MITRE ATT&CK, APT Simulation, EDR/WAF Evasion, Cobalt Strike, Sliver, Havoc, Empire, Custom C2 payloads.</span>
+        </div>
+        <div class="comp-item">
+          <span class="comp-label">Firmware & Hardware Reverse Engineering</span>
+          <span class="comp-content">Flash dump via JTAG/UART/SPI/I2C, Bus Pirate, Binwalk, análise de bootloaders, busca de 0-days em IoT/embarcados.</span>
+        </div>
+        <div class="comp-item">
+          <span class="comp-label">Linux Kernel & Driver RE</span>
+          <span class="comp-content">Módulos de Kernel em C, depuração com GDB/KGDB/QEMU, dissecação de barramentos (USB/PCI), engenharia reversa de blobs binários proprietários.</span>
+        </div>
+        <div class="comp-item">
+          <span class="comp-label">Engenharia Reversa de Binários</span>
+          <span class="comp-content">Ghidra, IDA Pro, Radare2/Cutter, GDB com GEF/Pwndbg, x64dbg, Pwntools, binários x86/x64, ARM, MIPS.</span>
+        </div>
+        <div class="comp-item">
+          <span class="comp-label">AI Red Teaming & LLM Security</span>
+          <span class="comp-content">Prompt Injection (direto/indireto), Jailbreak, Prompt Leakage, evasão de guardrails, OWASP Top 10 for LLMs (GCP Vertex AI).</span>
+        </div>
+        <div class="comp-item">
+          <span class="comp-label">Cloud, AD & Network Penetration Testing</span>
+          <span class="comp-content">GCP, Azure, AWS, Kubernetes Breakout, Active Directory (BloodHound, Mimikatz, Impacket), Burp Suite Pro, APIs REST/GraphQL.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIÊNCIA PROFISSIONAL -->
+    <section class="resume-section">
+      <h2 class="section-title">💼 Experiência Profissional</h2>
+
+      <!-- JEITTO -->
+      <article class="experience-card">
+        <div class="exp-header">
+          <div class="exp-title-group">
+            <span class="exp-company">Jeitto (Fintech / Meios de Pagamento)</span>
+            <span class="exp-role">| Staff / Senior Offensive Security Engineer & Red Team Lead</span>
+          </div>
+          <span class="exp-period">10/2024 – 10/2026 (2 anos)</span>
+        </div>
+        <ul class="exp-bullets">
+          <li><strong>Campanhas de Emulação de Adversários:</strong> Planejou e executou operações contínuas de Red Teaming baseadas no MITRE ATT&CK contra ecossistemas críticos de pagamento, cartões de crédito e crédito digital no GCP e Azure.</li>
+          <li><strong>Evasão de Detecção & C2:</strong> Desenvolveu payloads evasivos customizados e esteiras de C2 que contornaram mecanismos de WAF (Cloud Armor) e EDRs corporativos, demonstrando caminhos de exploração antes de agentes maliciosos reais.</li>
+          <li><strong>AI Red Teaming (Vertex AI):</strong> Conduziu baterias de testes ofensivos contra produtos baseados em LLMs integrados ao core financeiro, forçando quebras de guardrails, injeção de prompts e extração de dados confidenciais via RAG.</li>
+          <li><strong>Auditoria Ofensiva de APIs Financeiras:</strong> Identificou vulnerabilidades críticas de Broken Object Level Authorization (BOLA/IDOR) e regras de negócio em microsserviços transacionais, prevenindo fraudes de alto impacto.</li>
+          <li><strong>Purple Teaming & Elevação do SOC:</strong> Conduziu debriefings pós-operação com o time de Blue Team / SOC, transformando cada TTP de ataque em regras de correlação em SIEM, elevando a cobertura de defesa em 88%.</li>
+        </ul>
+        <div class="tag-list">
+          <span class="tag tag-red">MITRE ATT&CK</span>
+          <span class="tag tag-red">EDR Evasion</span>
+          <span class="tag tag-red">AI Red Teaming</span>
+          <span class="tag tag-red">Custom C2</span>
+          <span class="tag">GCP Vertex AI</span>
+          <span class="tag">BOLA/IDOR</span>
+          <span class="tag">Purple Teaming</span>
+        </div>
+      </article>
+
+      <!-- CLINICORP -->
+      <article class="experience-card">
+        <div class="exp-header">
+          <div class="exp-title-group">
+            <span class="exp-company">Clinicorp (Healthtech / SaaS Odontologia & Financeiro)</span>
+            <span class="exp-role">| Senior Red Team Specialist & Penetration Tester</span>
+          </div>
+          <span class="exp-period">10/2022 – 09/2024 (2 anos)</span>
+        </div>
+        <ul class="exp-bullets">
+          <li><strong>Simulação de Ameaças & Compromisso de Dados:</strong> Liderou campanhas ofensivas orientadas a demonstrar o impacto de exfiltração de dados altamente sensíveis (prontuários e transações financeiras em conformidade com LGPD e HIPAA).</li>
+          <li><strong>Exploração de Identidade & Movimentação Lateral:</strong> Mapeou vetores de ataque em provedores de identidade híbrida (IAM/SSO), explorando permissões excessivas, chaves expostas e caminhos de escalonamento no GCP e Azure.</li>
+          <li><strong>Pentest Web & Mobile:</strong> Executou testes de intrusão em profundidade contra aplicações web (React/Node) e aplicativos móveis (Android/iOS), descobrindo falhas de autenticação, bypass criptográfico e injeções de código.</li>
+          <li><strong>Container Escape & Hardening:</strong> Conduziu testes de quebra de isolamento em clusters Kubernetes (GKE), testando técnicas de container breakout e adulteração de pipelines CI/CD, garantindo a correção de 92% das brechas pré-produção.</li>
+        </ul>
+        <div class="tag-list">
+          <span class="tag tag-red">Container Escape</span>
+          <span class="tag tag-red">K8s Pentest</span>
+          <span class="tag tag-red">IAM Exploitation</span>
+          <span class="tag">BloodHound</span>
+          <span class="tag">Burp Suite Pro</span>
+          <span class="tag">Mobile Pentest</span>
+        </div>
+      </article>
+
+      <!-- QUEBRA DE PÁGINA PARA PDF (Página 2) -->
+      <div class="page-break"></div>
+
+      <!-- LOCAWEB -->
+      <article class="experience-card avoid-break">
+        <div class="exp-header">
+          <div class="exp-title-group">
+            <span class="exp-company">Locaweb SA (Infraestrutura de Hosting & Nuvem)</span>
+            <span class="exp-role">| Senior Offensive Security Engineer / Threat Emulation</span>
+          </div>
+          <span class="exp-period">05/2019 – 09/2022 (3 anos e 5 meses)</span>
+        </div>
+        <ul class="exp-bullets">
+          <li><strong>Operações Red Team em Escala Massiva:</strong> Executou testes de invasão e campanhas de emulação de adversários em infraestrutura massiva de data centers e nuvens atendendo a centenas de milhares de clientes.</li>
+          <li><strong>Mapeamento de Domínio com BloodHound:</strong> Mapeou grafos de ataque em florestas complexas de Active Directory, identificando e explorando caminhos não documentados para Domain Admin e hypervisors corporativos.</li>
+          <li><strong>Análise Ofensiva de Hypervisors & Redes:</strong> Conduziu auditorias de segurança ofensiva em tecnologias de virtualização (KVM, OpenStack) e redes corporativas, identificando vulnerabilidades de segmentação de VLANs e firewalls perimetrais.</li>
+          <li><strong>Engenharia Reversa de Binários Proprietários:</strong> Desmontou e analisou binários compilados legados com Ghidra e Radare2, descobrindo falhas de corrupção de memória e chamadas inseguras de sistema.</li>
+        </ul>
+        <div class="tag-list">
+          <span class="tag tag-red">AD Exploitation</span>
+          <span class="tag tag-red">Binary Disassembly</span>
+          <span class="tag">KVM / OpenStack</span>
+          <span class="tag">BloodHound</span>
+          <span class="tag">Ghidra</span>
+          <span class="tag">VLAN Hopping</span>
+        </div>
+      </article>
+
+      <!-- PAGSEGURO -->
+      <article class="experience-card avoid-break">
+        <div class="exp-header">
+          <div class="exp-title-group">
+            <span class="exp-company">PagSeguro SA (Meios de Pagamento & Terminais)</span>
+            <span class="exp-role">| Offensive Security Engineer</span>
+          </div>
+          <span class="exp-period">05/2017 – 04/2019 (2 anos)</span>
+        </div>
+        <ul class="exp-bullets">
+          <li>Executou testes de intrusão e simulações de ataque em gateways de pagamento, APIs de checkout transparente e terminais POS/SmartPOS físicos.</li>
+          <li>Avaliou a integridade física de hardware POS, testando segurança de bootloader, interfaces de debug (UART/JTAG/ADB) e resistência a adulterações locais.</li>
+          <li>Criou exploits controlados para validar vulnerabilidades em esteiras de CI/CD e infraestruturas na AWS.</li>
+        </ul>
+      </article>
+
+      <!-- HISTÓRICO ANTERIOR CONSOLIDADO -->
+      <article class="experience-card avoid-break">
+        <div class="exp-header">
+          <div class="exp-title-group">
+            <span class="exp-company">TCIBPO & HCFMUSP</span>
+            <span class="exp-role">| Penetration Tester & Pesquisador de Segurança (P&D)</span>
+          </div>
+          <span class="exp-period">2014 – 2017</span>
+        </div>
+        <ul class="exp-bullets">
+          <li><strong>TCIBPO:</strong> Pentest em infraestruturas AWS/Azure e desenvolvimento de ferramentas de enumeração e ataque em Python e Bash.</li>
+          <li><strong>HCFMUSP:</strong> Pesquisa e testes de intrusão em equipamentos médicos conectados (IoMT), descobrindo protocolos de comunicação proprietários sem criptografia e com falhas de controle de acesso.</li>
+        </ul>
+      </article>
+
+      <!-- CONECTIVA LINUX (DESTAQUE LOW-LEVEL) -->
+      <article class="experience-card avoid-break">
+        <div class="exp-header">
+          <div class="exp-title-group">
+            <span class="exp-company">Conectiva Linux</span>
+            <span class="exp-role">| Analista de Sistemas / Kernel & Driver Researcher</span>
+          </div>
+          <span class="exp-period">Trajetória Pioneira</span>
+        </div>
+        <ul class="exp-bullets">
+          <li><strong>Engenharia Reversa e Criação de Drivers:</strong> Adaptou e desenvolveu drivers de dispositivo para o Kernel Linux em linguagem C. Atuou na engenharia reversa de periféricos sem documentação pública capturando pacotes de barramento e decompilando binários proprietários.</li>
+          <li><strong>Kernel Internals & ELF Disassembly:</strong> Pesquisa profunda em estruturas de dados do Kernel, system calls, empacotamento seguro e mitigação de vulnerabilidades de baixo nível.</li>
+        </ul>
+        <div class="tag-list">
+          <span class="tag tag-hw">Linux Kernel C</span>
+          <span class="tag tag-hw">Driver Reverse Engineering</span>
+          <span class="tag tag-hw">USB/PCI Bus Protocol</span>
+          <span class="tag">GDB / KGDB</span>
+          <span class="tag">ELF Binaries</span>
+        </div>
+      </article>
+    </section>
+
+    <!-- DESTAQUE EM ENGENHARIA REVERSA DE FIRMWARE & HARDWARE -->
+    <section class="resume-section avoid-break">
+      <div class="highlights-box">
+        <h4>🔬 Especialização em Firmware & Hardware Reverse Engineering (Destaque Prático)</h4>
+        <ul>
+          <li><strong>Extração Física e Lógica de Firmware:</strong> Aquisição de código executável diretamente de chips de memória flash (SPI, NAND, EEPROM) via clipes SOIC e solda direta utilizando Bus Pirate, Raspberry Pi e gravadores dedicados.</li>
+          <li><strong>Desempacotamento de Firmware com Binwalk:</strong> Reconstrução de árvores de arquivos a partir de imagens de firmware brutas, extração de sistemas de arquivos (SquashFS, CramFS, JFFS2) e cabeçalhos U-Boot.</li>
+          <li><strong>Caça a Falhas em Binários Embarcados:</strong> Descompilação de binários compilados para arquiteturas RISC, ARM e MIPS com <strong>Ghidra, IDA Pro e Radare2</strong>, identificando backdoors de depuração, senhas hardcoded e corrupção de memória.</li>
+          <li><strong>Drivers Open-Source Nativos:</strong> Histórico comprovado na criação de drivers Linux para dispositivos proprietários (como o projeto <code>canvasbio-cb2000-linux-driver</code>), revertendo protocolos de comunicação USB de ponta a ponta.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- DOIS BLOCOS: FORMAÇÃO + COMUNIDADE -->
+    <div class="two-col-section avoid-break">
+      <!-- FORMAÇÃO & CERTIFICAÇÕES -->
+      <div>
+        <h2 class="section-title">🎓 Formação & Certificações</h2>
+        <ul class="simple-list">
+          <li><strong>Engenharia da Computação</strong> – Univ. Presbiteriana Mackenzie</li>
+          <li><strong>Pós-Graduação em Data Science</strong> – Johns Hopkins University <em>(Cursando)</em></li>
+          <li><strong>Técnico em Mecatrônica</strong> – SENAI-SP <em>(Circuitos digitais, microcontroladores e eletrônica de barramentos)</em></li>
+          <li><strong>Metodologias Ofensivas:</strong> Treinamentos avançados alinhados a OSCP e CRTO (Evasão de EDR, Active Directory e Exploração Avançada).</li>
+          <li><strong>Cloud & Linux:</strong> Google Cloud Platform (GCP) Security, Azure Security, LPIC-1, LPIC-2, Linux Conectiva, UTHA Linux Center.</li>
+        </ul>
+      </div>
+
+      <!-- COMUNIDADE & HACKER CULTURE -->
+      <div>
+        <h2 class="section-title">🌐 Cultura Hacker & Liderança</h2>
+        <ul class="simple-list">
+          <li><strong>Garoa Hacker Clube:</strong> Membro fundador do primeiro hackerspace do Brasil; liderança em oficinas de hardware hacking, engenharia reversa e segurança ofensiva.</li>
+          <li><strong>Fundação HackerSpace:</strong> Co-Fundador e evangelizador de educação e pesquisa aberta em segurança (2008 – Presente).</li>
+          <li><strong>Campus Party Brasil:</strong> Palestrante oficial nas edições 2010, 2012, 2013 e CP 10, com palestras sobre exploração de kernel Linux e segurança.</li>
+          <li><strong>Grupo de Usuários Gentoo Linux SP:</strong> Ex-Presidente, liderando encontros técnicos de compilação e segurança de sistemas operacionais.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
